@@ -1,0 +1,21 @@
+<binaryValidator>
+    <binaryValidatorLHS>
+        <atomicValidatorLHS>
+            <Field>id</Field>
+            <Value>4</Value>
+            <binaryEqualsOperator/>
+        </atomicValidatorLHS>
+        <atomicValidatorRHS>
+            <Field>name</Field>
+            <Value>gaurav</Value>
+            <binaryEqualsOperator/>
+        </atomicValidatorRHS>
+        <binaryLogicalAndOperator/>
+    </binaryValidatorLHS>
+    <atomicValidatorRHS>
+        <Field>id</Field>
+        <Value>3</Value>
+        <binaryEqualsOperator/>
+    </atomicValidatorRHS>
+    <binaryLogicalAndOperator/>
+</binaryValidator>

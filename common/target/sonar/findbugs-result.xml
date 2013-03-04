@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="2.0.1" sequence="0" timestamp="1362241486154" analysisTimestamp="1362241593952" release="">
+  <Project>
+    <Jar>F:\Workspaces\validator\common\target\classes</Jar>
+    <AuxClasspathEntry>F:\Repository\repo\javax\xml\bind\jaxb-api\2.1\jaxb-api-2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javax\activation\activation\1.1\activation-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\log4j\log4j\1.2.15\log4j-1.2.15.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javax\mail\mail\1.4\mail-1.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javax\jms\jms\1.1\jms-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\sun\jdmk\jmxtools\1.2.1\jmxtools-1.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\sun\jmx\jmxri\1.2.1\jmxri-1.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\google\inject\guice\3.0\guice-3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javax\inject\javax.inject\1\javax.inject-1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\aopalliance\aopalliance\1.0\aopalliance-1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-maven-plugin\3.4.1\sonar-maven-plugin-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\shared\maven-dependency-tree\1.2\maven-dependency-tree-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-project\2.0.8\maven-project-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-settings\2.0.8\maven-settings-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-model\2.0.8\maven-model-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\plexus\plexus-utils\1.4.6\plexus-utils-1.4.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\plexus\plexus-container-default\1.0-alpha-9-stable-1\plexus-container-default-1.0-alpha-9-stable-1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-profile\2.0.8\maven-profile-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-artifact-manager\2.0.8\maven-artifact-manager-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-repository-metadata\2.0.8\maven-repository-metadata-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-artifact\2.0.8\maven-artifact-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\wagon\wagon-provider-api\1.0-beta-2\wagon-provider-api-1.0-beta-2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\apache\maven\maven-plugin-registry\2.0.8\maven-plugin-registry-2.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-batch\3.4.1\sonar-batch-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-core\3.4.1\sonar-core-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-plugin-api\3.4.1\sonar-plugin-api-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-check-api\3.4.1\sonar-check-api-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-colorizer\3.4.1\sonar-colorizer-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\google\guava\guava\10.0.1\guava-10.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-channel\3.4.1\sonar-channel-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\slf4j\slf4j-api\1.6.2\slf4j-api-1.6.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-duplications\3.4.1\sonar-duplications-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-graph\3.4.1\sonar-graph-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-lang\commons-lang\2.6\commons-lang-2.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-squid\3.4.1\sonar-squid-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\picocontainer\picocontainer\2.14.1\picocontainer-2.14.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\hibernate\hibernate-annotations\3.4.0.GA\hibernate-annotations-3.4.0.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\hibernate\ejb3-persistence\1.0.2.GA\ejb3-persistence-1.0.2.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\hibernate\hibernate-commons-annotations\3.1.0.GA\hibernate-commons-annotations-3.1.0.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\xml-apis\xml-apis\1.3.03\xml-apis-1.3.03.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-configuration\commons-configuration\1.6\commons-configuration-1.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-collections\commons-collections\3.1\commons-collections-3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-digester\commons-digester\1.8\commons-digester-1.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-beanutils\commons-beanutils\1.7.0\commons-beanutils-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-codec\commons-codec\1.4\commons-codec-1.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\jfree\jfreechart\1.0.9\jfreechart-1.0.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\jfree\jcommon\1.0.12\jcommon-1.0.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\slf4j\jcl-over-slf4j\1.6.2\jcl-over-slf4j-1.6.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\slf4j\log4j-over-slf4j\1.6.2\log4j-over-slf4j-1.6.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\thoughtworks\xstream\xstream\1.3.1\xstream-1.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\xpp3\xpp3\1.1.3.3\xpp3-1.1.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\woodstox\woodstox-core-lgpl\4.0.4\woodstox-core-lgpl-4.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\woodstox\stax2-api\3.0.1\stax2-api-3.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\staxmate\staxmate\2.0.0\staxmate-2.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\stax\stax-api\1.0.1\stax-api-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\xerces\xercesImpl\2.8.1\xercesImpl-2.8.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\xalan\xalan\2.7.1\xalan-2.7.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\xalan\serializer\2.7.1\serializer-2.7.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\mybatis\mybatis\3.1.1\mybatis-3.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-update-center-common\1.3\sonar-update-center-common-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\hibernate\hibernate-core\3.3.2.GA\hibernate-core-3.3.2.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\antlr\antlr\2.7.6\antlr-2.7.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\hibernate\hibernate-entitymanager\3.4.0.GA\hibernate-entitymanager-3.4.0.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\javassist\javassist\3.4.GA\javassist-3.4.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\geronimo-spec\geronimo-spec-jta\1.0-M1\geronimo-spec-jta-1.0-M1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-dbcp\commons-dbcp\1.3\commons-dbcp-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\commons-pool\commons-pool\1.5.4\commons-pool-1.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\ch\qos\logback\logback-classic\0.9.30\logback-classic-0.9.30.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\ch\qos\logback\logback-core\0.9.30\logback-core-0.9.30.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-deprecated\3.4.1\sonar-deprecated-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\org\codehaus\sonar\sonar-java-api\3.4.1\sonar-java-api-3.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>F:\Repository\repo\com\h2database\h2\1.3.167\h2-1.3.167.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\GAURAV~1\AppData\Local\Temp\findbugs545242782587416231.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\GAURAV~1\AppData\Local\Temp\findbugs2479067227531881442.jar</AuxClasspathEntry>
+    <SrcDir>F:\Workspaces\validator\common\src\main\java</SrcDir>
+    <WrkDir>F:\Workspaces\validator\common\target</WrkDir>
+  </Project>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" abbrev="ST" category="STYLE" instanceHash="d521e6905a678701ba4f5495d9004c7d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field com.validator.common.util.ValidatorProperties.properties from instance method new com.validator.common.util.ValidatorProperties()</LongMessage>
+    <Class classname="com.validator.common.util.ValidatorProperties" primary="true">
+      <SourceLine classname="com.validator.common.util.ValidatorProperties" start="19" end="64" sourcefile="ValidatorProperties.java" sourcepath="com/validator/common/util/ValidatorProperties.java" relSourcepath="com\validator\common\util\ValidatorProperties.java">
+        <Message>At ValidatorProperties.java:[lines 19-64]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.util.ValidatorProperties</Message>
+    </Class>
+    <Method classname="com.validator.common.util.ValidatorProperties" name="&lt;init&gt;" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.util.ValidatorProperties" start="27" end="37" startBytecode="0" endBytecode="189" sourcefile="ValidatorProperties.java" sourcepath="com/validator/common/util/ValidatorProperties.java" relSourcepath="com\validator\common\util\ValidatorProperties.java"/>
+      <Message>In method new com.validator.common.util.ValidatorProperties()</Message>
+    </Method>
+    <Field classname="com.validator.common.util.ValidatorProperties" name="properties" signature="Ljava/util/Properties;" isStatic="true" primary="true">
+      <SourceLine classname="com.validator.common.util.ValidatorProperties" sourcefile="ValidatorProperties.java" sourcepath="com/validator/common/util/ValidatorProperties.java" relSourcepath="com\validator\common\util\ValidatorProperties.java">
+        <Message>In ValidatorProperties.java</Message>
+      </SourceLine>
+      <Message>Field com.validator.common.util.ValidatorProperties.properties</Message>
+    </Field>
+    <SourceLine classname="com.validator.common.util.ValidatorProperties" primary="true" start="29" end="29" startBytecode="13" endBytecode="13" sourcefile="ValidatorProperties.java" sourcepath="com/validator/common/util/ValidatorProperties.java" relSourcepath="com\validator\common\util\ValidatorProperties.java">
+      <Message>At ValidatorProperties.java:[line 29]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE" instanceHash="9c527324f991c0ec068cfbc9355d5c26" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>com.validator.common.validation.Employee.getDateOfJoining() may expose internal representation by returning Employee.dateOfJoining</LongMessage>
+    <Class classname="com.validator.common.validation.Employee" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" start="5" end="26" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+        <Message>At Employee.java:[lines 5-26]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.validation.Employee</Message>
+    </Class>
+    <Method classname="com.validator.common.validation.Employee" name="getDateOfJoining" signature="()Ljava/util/Date;" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" start="22" end="22" startBytecode="0" endBytecode="46" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java"/>
+      <Message>In method com.validator.common.validation.Employee.getDateOfJoining()</Message>
+    </Method>
+    <Field classname="com.validator.common.validation.Employee" name="dateOfJoining" signature="Ljava/util/Date;" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+        <Message>In Employee.java</Message>
+      </SourceLine>
+      <Message>Field com.validator.common.validation.Employee.dateOfJoining</Message>
+    </Field>
+    <SourceLine classname="com.validator.common.validation.Employee" primary="true" start="22" end="22" startBytecode="4" endBytecode="4" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+      <Message>At Employee.java:[line 22]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="b759f4aa001b1cd543d84bbaa827797a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>com.validator.common.validation.Employee.setDateOfJoining(Date) may expose internal representation by storing an externally mutable object into Employee.dateOfJoining</LongMessage>
+    <Class classname="com.validator.common.validation.Employee" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" start="5" end="26" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+        <Message>At Employee.java:[lines 5-26]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.validation.Employee</Message>
+    </Class>
+    <Method classname="com.validator.common.validation.Employee" name="setDateOfJoining" signature="(Ljava/util/Date;)V" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" start="25" end="26" startBytecode="0" endBytecode="61" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java"/>
+      <Message>In method com.validator.common.validation.Employee.setDateOfJoining(Date)</Message>
+    </Method>
+    <Field classname="com.validator.common.validation.Employee" name="dateOfJoining" signature="Ljava/util/Date;" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.validation.Employee" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+        <Message>In Employee.java</Message>
+      </SourceLine>
+      <Message>Field com.validator.common.validation.Employee.dateOfJoining</Message>
+    </Field>
+    <LocalVariable name="dateOfJoining" register="1" pc="2" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named dateOfJoining</Message>
+    </LocalVariable>
+    <SourceLine classname="com.validator.common.validation.Employee" primary="true" start="25" end="25" startBytecode="2" endBytecode="2" sourcefile="Employee.java" sourcepath="com/validator/common/validation/Employee.java" relSourcepath="com\validator\common\validation\Employee.java">
+      <Message>At Employee.java:[line 25]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" abbrev="Dm" category="I18N" instanceHash="71d8f28c80e58e5e3ae275e49a56edb3" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="19">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in com.validator.common.validation.Main.unmarshal(): new java.io.FileReader(String)</LongMessage>
+    <Class classname="com.validator.common.validation.Main" primary="true">
+      <SourceLine classname="com.validator.common.validation.Main" start="19" end="68" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java">
+        <Message>At Main.java:[lines 19-68]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.validation.Main</Message>
+    </Class>
+    <Method classname="com.validator.common.validation.Main" name="unmarshal" signature="()V" isStatic="true" primary="true">
+      <SourceLine classname="com.validator.common.validation.Main" start="35" end="44" startBytecode="0" endBytecode="196" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java"/>
+      <Message>In method com.validator.common.validation.Main.unmarshal()</Message>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader" start="41" end="42" startBytecode="0" endBytecode="40" sourcefile="FileReader.java" sourcepath="java/io/FileReader.java"/>
+      <Message>Called method new java.io.FileReader(String)</Message>
+    </Method>
+    <SourceLine classname="com.validator.common.validation.Main" primary="true" start="40" end="40" startBytecode="53" endBytecode="53" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java">
+      <Message>At Main.java:[line 40]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="ae62b6283912e298bd927cf122652898" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Method invokes inefficient Number constructor; use static valueOf instead</ShortMessage>
+    <LongMessage>com.validator.common.validation.Main.main(String[]) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</LongMessage>
+    <Class classname="com.validator.common.validation.Main" primary="true">
+      <SourceLine classname="com.validator.common.validation.Main" start="19" end="68" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java">
+        <Message>At Main.java:[lines 19-68]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.validation.Main</Message>
+    </Class>
+    <Method classname="com.validator.common.validation.Main" name="main" signature="([Ljava/lang/String;)V" isStatic="true" primary="true">
+      <SourceLine classname="com.validator.common.validation.Main" start="30" end="32" startBytecode="0" endBytecode="108" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java"/>
+      <Message>In method com.validator.common.validation.Main.main(String[])</Message>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="642" end="644" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+      <Message>Called method new Integer(int)</Message>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)V" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+      <Message>Should call Integer.valueOf(int) instead</Message>
+    </Method>
+    <SourceLine classname="com.validator.common.validation.Main" primary="true" start="30" end="30" startBytecode="5" endBytecode="5" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java">
+      <Message>At Main.java:[line 30]</Message>
+    </SourceLine>
+    <SourceLine classname="com.validator.common.validation.Main" start="31" end="31" startBytecode="34" endBytecode="34" sourcefile="Main.java" sourcepath="com/validator/common/validation/Main.java" relSourcepath="com\validator\common\validation\Main.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at Main.java:[line 31]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="1" abbrev="ES" category="BAD_PRACTICE" instanceHash="da13ba1aa988631de0816dc177a5498d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="9">
+    <ShortMessage>Comparison of String objects using == or !=</ShortMessage>
+    <LongMessage>Comparison of String objects using == or != in com.validator.common.validators.AtomicValidator.validate(Object) </LongMessage>
+    <Class classname="com.validator.common.validators.AtomicValidator" primary="true">
+      <SourceLine classname="com.validator.common.validators.AtomicValidator" start="19" end="125" sourcefile="AtomicValidator.java" sourcepath="com/validator/common/validators/AtomicValidator.java" relSourcepath="com\validator\common\validators\AtomicValidator.java">
+        <Message>At AtomicValidator.java:[lines 19-125]</Message>
+      </SourceLine>
+      <Message>In class com.validator.common.validators.AtomicValidator</Message>
+    </Class>
+    <Method classname="com.validator.common.validators.AtomicValidator" name="validate" signature="(Ljava/lang/Object;)Z" isStatic="false" primary="true">
+      <SourceLine classname="com.validator.common.validators.AtomicValidator" start="32" end="56" startBytecode="0" endBytecode="72" sourcefile="AtomicValidator.java" sourcepath="com/validator/common/validators/AtomicValidator.java" relSourcepath="com\validator\common\validators\AtomicValidator.java"/>
+      <Message>In method com.validator.common.validators.AtomicValidator.validate(Object)</Message>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="92" end="2973" sourcefile="String.java" sourcepath="java/lang/String.java">
+        <Message>At String.java:[lines 92-2973]</Message>
+      </SourceLine>
+      <Message>Actual type String</Message>
+    </Type>
+    <Method classname="java.lang.Class" name="getSimpleName" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.Class" start="1109" end="1138" startBytecode="0" endBytecode="191" sourcefile="Class.java" sourcepath="java/lang/Class.java"/>
+      <Message>Return value of Class.getSimpleName()</Message>
+    </Method>
+    <Method classname="java.lang.Class" name="toString" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.Class" start="131" end="131" startBytecode="0" endBytecode="70" sourcefile="Class.java" sourcepath="java/lang/Class.java"/>
+      <Message>Return value of Class.toString()</Message>
+    </Method>
+    <SourceLine classname="com.validator.common.validators.AtomicValidator" primary="true" start="38" end="38" startBytecode="29" endBytecode="29" sourcefile="AtomicValidator.java" sourcepath="com/validator/common/validators/AtomicValidator.java" relSourcepath="com\validator\common\validators\AtomicValidator.java">
+      <Message>At AtomicValidator.java:[line 38]</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.DYNAMIC_AND_UNKNOWN" value="true"/>
+  </BugInstance>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="I18N">
+    <Description>Internationalization</Description>
+  </BugCategory>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugPattern type="DM_DEFAULT_ENCODING" abbrev="Dm" category="I18N">
+    <ShortDescription>Reliance on default encoding</ShortDescription>
+    <Details><![CDATA[
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      ]]></Details>
+  </BugPattern>
+  <BugPattern type="ES_COMPARING_STRINGS_WITH_EQ" abbrev="ES" category="BAD_PRACTICE">
+    <ShortDescription>Comparison of String objects using == or !=</ShortDescription>
+    <Details><![CDATA[
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DM_NUMBER_CTOR" abbrev="Bx" category="PERFORMANCE">
+    <ShortDescription>Method invokes inefficient Number constructor; use static valueOf instead</ShortDescription>
+    <Details><![CDATA[
+      
+      <p>
+      Using <code>new Integer(int)</code> is guaranteed to always result in a new object whereas
+      <code>Integer.valueOf(int)</code> allows caching of values to be done by the compiler, class library, or JVM.
+      Using of cached values avoids object allocation and the code will be faster.
+      </p>
+      <p>
+      Values between -128 and 127 are guaranteed to have corresponding cached instances
+      and using <code>valueOf</code> is approximately 3.5 times faster than using constructor.
+      For values outside the constant range the performance of both styles is the same.
+      </p>
+      <p>
+      Unless the class must be compatible with JVMs predating Java 1.5,
+      use either autoboxing or the <code>valueOf()</code> method when creating instances of
+      <code>Long</code>, <code>Integer</code>, <code>Short</code>, <code>Character</code>, and <code>Byte</code>.
+      </p>
+      
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" abbrev="ST" category="STYLE">
+    <ShortDescription>Write to static field from instance method</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="Bx">
+    <Description>Questionable Boxing of primitive value</Description>
+  </BugCode>
+  <BugCode abbrev="Dm">
+    <Description>Dubious method used</Description>
+  </BugCode>
+  <BugCode abbrev="ST">
+    <Description>Misuse of static fields</Description>
+  </BugCode>
+  <BugCode abbrev="ES" cweid="597">
+    <Description>Checking String equality using == or !=</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method returning array may expose internal representation</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 2 Mar 2013 21:54:46 +0530" total_classes="34" referenced_classes="93" total_bugs="6" total_size="611" num_packages="9" vm_version="19.0-b09" cpu_seconds="2.23" clock_seconds="2.11" peak_mbytes="226.37" alloc_mbytes="494.94" gc_seconds="0.14" priority_2="4" priority_1="2">
+    <FileStats path="com/validator/common/constants/Constants.java" bugCount="0" size="19"/>
+    <FileStats path="com/validator/common/constants/Errors.java" bugCount="0" size="21"/>
+    <FileStats path="com/validator/common/constants/PropertyKeys.java" bugCount="0" size="17"/>
+    <FileStats path="com/validator/common/exceptions/PropertyNotFoundException.java" bugCount="0" size="12"/>
+    <FileStats path="com/validator/common/exceptions/XmlTransformationException.java" bugCount="0" size="8"/>
+    <FileStats path="com/validator/common/operators/Operator.java" bugCount="0" size="2"/>
+    <FileStats path="com/validator/common/operators/binary/arithmetic/BinaryArithmeticOperator.java" bugCount="0" size="1"/>
+    <FileStats path="com/validator/common/operators/binary/arithmetic/BinaryEqualsOperator.java" bugCount="0" size="9"/>
+    <FileStats path="com/validator/common/operators/binary/arithmetic/BinaryGreaterThanOperator.java" bugCount="0" size="10"/>
+    <FileStats path="com/validator/common/operators/binary/logical/BinaryLogicalAndOperator.java" bugCount="0" size="7"/>
+    <FileStats path="com/validator/common/operators/binary/logical/BinaryLogicalOperator.java" bugCount="0" size="1"/>
+    <FileStats path="com/validator/common/operators/binary/logical/BinaryLogicalOrOperator.java" bugCount="0" size="7"/>
+    <FileStats path="com/validator/common/operators/unary/logical/UnaryLogicalNotOperator.java" bugCount="0" size="6"/>
+    <FileStats path="com/validator/common/operators/unary/logical/UnaryLogicalOperator.java" bugCount="0" size="1"/>
+    <FileStats path="com/validator/common/util/CommonUtil.java" bugCount="0" size="14"/>
+    <FileStats path="com/validator/common/util/StringUtil.java" bugCount="0" size="11"/>
+    <FileStats path="com/validator/common/util/ValidatorProperties.java" bugCount="1" size="28" bugHash="887ddd2f7238febf6783d599a191e9b4"/>
+    <FileStats path="com/validator/common/validation/Employee.java" bugCount="2" size="21" bugHash="f7817782f90f792b0093ae504c49f228"/>
+    <FileStats path="com/validator/common/validation/GeneralValidator.java" bugCount="0" size="2"/>
+    <FileStats path="com/validator/common/validation/Main.java" bugCount="2" size="35" bugHash="20f4878dc45bf90375aa269a706d14a2"/>
+    <FileStats path="com/validator/common/validation/Validation.java" bugCount="0" size="239"/>
+    <FileStats path="com/validator/common/validators/AtomicValidator.java" bugCount="1" size="71" bugHash="23043b785d89443b93bbbf687a3dea9f"/>
+    <FileStats path="com/validator/common/validators/BinaryValidator.java" bugCount="0" size="39"/>
+    <FileStats path="com/validator/common/validators/UnaryValidator.java" bugCount="0" size="28"/>
+    <FileStats path="com/validator/common/validators/Validator.java" bugCount="0" size="2"/>
+    <PackageStats package="com.validator.common.constants" total_bugs="0" total_types="3" total_size="57">
+      <ClassStats class="com.validator.common.constants.Constants" sourceFile="Constants.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.validator.common.constants.Errors" sourceFile="Errors.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.validator.common.constants.PropertyKeys" sourceFile="PropertyKeys.java" interface="false" size="17" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.exceptions" total_bugs="0" total_types="2" total_size="20">
+      <ClassStats class="com.validator.common.exceptions.PropertyNotFoundException" sourceFile="PropertyNotFoundException.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.validator.common.exceptions.XmlTransformationException" sourceFile="XmlTransformationException.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.operators" total_bugs="0" total_types="1" total_size="2">
+      <ClassStats class="com.validator.common.operators.Operator" sourceFile="Operator.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.operators.binary.arithmetic" total_bugs="0" total_types="3" total_size="20">
+      <ClassStats class="com.validator.common.operators.binary.arithmetic.BinaryArithmeticOperator" sourceFile="BinaryArithmeticOperator.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.validator.common.operators.binary.arithmetic.BinaryEqualsOperator" sourceFile="BinaryEqualsOperator.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.validator.common.operators.binary.arithmetic.BinaryGreaterThanOperator" sourceFile="BinaryGreaterThanOperator.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.operators.binary.logical" total_bugs="0" total_types="3" total_size="15">
+      <ClassStats class="com.validator.common.operators.binary.logical.BinaryLogicalAndOperator" sourceFile="BinaryLogicalAndOperator.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.validator.common.operators.binary.logical.BinaryLogicalOperator" sourceFile="BinaryLogicalOperator.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.validator.common.operators.binary.logical.BinaryLogicalOrOperator" sourceFile="BinaryLogicalOrOperator.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.operators.unary.logical" total_bugs="0" total_types="2" total_size="7">
+      <ClassStats class="com.validator.common.operators.unary.logical.UnaryLogicalNotOperator" sourceFile="UnaryLogicalNotOperator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.validator.common.operators.unary.logical.UnaryLogicalOperator" sourceFile="UnaryLogicalOperator.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.util" total_bugs="1" total_types="3" total_size="53" priority_2="1">
+      <ClassStats class="com.validator.common.util.CommonUtil" sourceFile="CommonUtil.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.validator.common.util.StringUtil" sourceFile="StringUtil.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.validator.common.util.ValidatorProperties" sourceFile="ValidatorProperties.java" interface="false" size="28" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.validation" total_bugs="4" total_types="13" total_size="297" priority_2="3" priority_1="1">
+      <ClassStats class="com.validator.common.validation.Employee" sourceFile="Employee.java" interface="false" size="21" bugs="2" priority_2="2"/>
+      <ClassStats class="com.validator.common.validation.GeneralValidator" sourceFile="GeneralValidator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Main" sourceFile="Main.java" interface="false" size="35" bugs="2" priority_2="1" priority_1="1"/>
+      <ClassStats class="com.validator.common.validation.Validation" sourceFile="Validation.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$1" sourceFile="Validation.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$2" sourceFile="Validation.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$3" sourceFile="Validation.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$4" sourceFile="Validation.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$5" sourceFile="Validation.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$6" sourceFile="Validation.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$7" sourceFile="Validation.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$Builder" sourceFile="Validation.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.validator.common.validation.Validation$Constraint" sourceFile="Validation.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.validator.common.validators" total_bugs="1" total_types="4" total_size="140" priority_1="1">
+      <ClassStats class="com.validator.common.validators.AtomicValidator" sourceFile="AtomicValidator.java" interface="false" size="71" bugs="1" priority_1="1"/>
+      <ClassStats class="com.validator.common.validators.BinaryValidator" sourceFile="BinaryValidator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.validator.common.validators.UnaryValidator" sourceFile="UnaryValidator.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.validator.common.validators.Validator" sourceFile="Validator.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="231" invocations="457" avgMicrosecondsPerInvocation="506" maxMicrosecondsPerInvocation="26197" standardDeviationMircosecondsPerInvocation="1759"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="185" invocations="454" avgMicrosecondsPerInvocation="407" maxMicrosecondsPerInvocation="48150" standardDeviationMircosecondsPerInvocation="2434"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="160" invocations="93" avgMicrosecondsPerInvocation="1724" maxMicrosecondsPerInvocation="128564" standardDeviationMircosecondsPerInvocation="13251"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="47" invocations="93" avgMicrosecondsPerInvocation="511" maxMicrosecondsPerInvocation="9247" standardDeviationMircosecondsPerInvocation="1288"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="38" invocations="129" avgMicrosecondsPerInvocation="297" maxMicrosecondsPerInvocation="6170" standardDeviationMircosecondsPerInvocation="627"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="36" invocations="132" avgMicrosecondsPerInvocation="273" maxMicrosecondsPerInvocation="28255" standardDeviationMircosecondsPerInvocation="2445"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="35" invocations="129" avgMicrosecondsPerInvocation="277" maxMicrosecondsPerInvocation="2742" standardDeviationMircosecondsPerInvocation="375"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="34" invocations="131" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="9424" standardDeviationMircosecondsPerInvocation="852"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="33" invocations="118" avgMicrosecondsPerInvocation="282" maxMicrosecondsPerInvocation="17412" standardDeviationMircosecondsPerInvocation="1612"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="32" invocations="93" avgMicrosecondsPerInvocation="345" maxMicrosecondsPerInvocation="5418" standardDeviationMircosecondsPerInvocation="876"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="31" invocations="132" avgMicrosecondsPerInvocation="237" maxMicrosecondsPerInvocation="8081" standardDeviationMircosecondsPerInvocation="728"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="30" invocations="129" avgMicrosecondsPerInvocation="238" maxMicrosecondsPerInvocation="8746" standardDeviationMircosecondsPerInvocation="776"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="30" invocations="129" avgMicrosecondsPerInvocation="238" maxMicrosecondsPerInvocation="3363" standardDeviationMircosecondsPerInvocation="399"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="28" invocations="277" avgMicrosecondsPerInvocation="101" maxMicrosecondsPerInvocation="1190" standardDeviationMircosecondsPerInvocation="153"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="25" invocations="92" avgMicrosecondsPerInvocation="278" maxMicrosecondsPerInvocation="14875" standardDeviationMircosecondsPerInvocation="1531"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="21" invocations="93" avgMicrosecondsPerInvocation="228" maxMicrosecondsPerInvocation="9603" standardDeviationMircosecondsPerInvocation="1050"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="19" invocations="432" avgMicrosecondsPerInvocation="44" maxMicrosecondsPerInvocation="918" standardDeviationMircosecondsPerInvocation="90"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="17" invocations="93" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="4270" standardDeviationMircosecondsPerInvocation="551"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
