@@ -7,33 +7,30 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.validator.common.operators.Operator;
+import com.validator.common.operators.binary.logical.BinaryLogicalOperator;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 public class BinaryValidator<T> implements Validator<T> {
 
-	@XmlElements({
-			@XmlElement(name = "atomicValidatorLHS", type = AtomicValidator.class),
-			@XmlElement(name = "binaryValidatorLHS", type = BinaryValidator.class)})
+	@XmlElements({ @XmlElement(name = "atomicValidatorLHS", type = AtomicValidator.class),
+			@XmlElement(name = "binaryValidatorLHS", type = BinaryValidator.class) })
 	private Validator<T> validatorLHS;
-	
-	@XmlElements({
-			@XmlElement(name = "atomicValidatorRHS", type = AtomicValidator.class),
-			@XmlElement(name = "binaryValidatorRHS", type = BinaryValidator.class)})
+
+	@XmlElements({ @XmlElement(name = "atomicValidatorRHS", type = AtomicValidator.class),
+			@XmlElement(name = "binaryValidatorRHS", type = BinaryValidator.class) })
 	private Validator<T> validatorRHS;
 
 	@XmlAnyElement(lax = true)
-	private Operator<Boolean> operator;
+	private BinaryLogicalOperator<Boolean> binaryLogicalOperator;
 
 	public BinaryValidator() {
 	}
 
-	public BinaryValidator(Validator<T> validatorLHS,
-			Validator<T> validatorRHS, Operator booleanOperator) {
+	public BinaryValidator(Validator<T> validatorLHS, Validator<T> validatorRHS, BinaryLogicalOperator<Boolean> booleanOperator) {
 		this.validatorLHS = validatorLHS;
 		this.validatorRHS = validatorRHS;
-		this.operator = booleanOperator;
+		this.binaryLogicalOperator = booleanOperator;
 	}
 
 	public Validator<T> getValidatorLHS() {
@@ -52,29 +49,26 @@ public class BinaryValidator<T> implements Validator<T> {
 		this.validatorRHS = validatorRHS;
 	}
 
-	public Operator<Boolean> getOperator() {
-		return operator;
+	public BinaryLogicalOperator<Boolean> getOperator() {
+		return binaryLogicalOperator;
 	}
 
 	public boolean validate(T t) {
-		boolean validator;
 		isLegal();
 
-		return operator.operate(validatorLHS.validate(t),
-				validatorRHS.validate(t));
+		return binaryLogicalOperator.operate(validatorLHS.validate(t), validatorRHS.validate(t));
 	}
 
 	private void isLegal() {
-		if ((null == operator)) {
+		if ((null == binaryLogicalOperator)) {
 			throw new IllegalStateException("Operator cannot be null.");
 		} else if (((null == validatorLHS) || (null == validatorRHS))) {
-			throw new IllegalStateException(
-					"Atleast one validator must be set for a compound validator.");
+			throw new IllegalStateException("Atleast one validator must be set for a compound validator.");
 		}
 	}
 
-	public void setOperator(Operator<Boolean> operator) {
-		this.operator = operator;
+	public void setOperator(BinaryLogicalOperator<Boolean> operator) {
+		this.binaryLogicalOperator = operator;
 	}
 
 }
