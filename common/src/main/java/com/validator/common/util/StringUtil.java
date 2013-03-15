@@ -7,6 +7,10 @@ package com.validator.common.util;
  */
 public class StringUtil {
 
+	// Private constructor to discourage stop misuse
+	private StringUtil() {
+	}
+
 	/**
 	 * Returns a concatenated string consisting of the strings passed. Returns
 	 * null, if null is passed.

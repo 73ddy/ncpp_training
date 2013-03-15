@@ -12,6 +12,10 @@ import com.validator.common.constants.PropertyKeys;
  */
 public class CommonUtil {
 
+	// Private constructor to discourage stop misuse
+	private CommonUtil() {
+	}
+
 	/**
 	 * Returns the file separator character of Operating System.
 	 * 

@@ -4,6 +4,10 @@ import java.io.File;
 
 public class FileUtil {
 
+	// Private constructor to discourage stop misuse
+	private FileUtil() {
+	}
+
 	/**
 	 * Marks a file as PROCESSED, so as to identify the processed and the raw
 	 * files.
