@@ -12,8 +12,10 @@ import com.validator.common.file.management.FileManagerBean;
 import com.validator.common.xml.XmlManager;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.listeners.Listener;
-import com.validator.monitor.notifiers.JNotifier;
+import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.notifiers.Notifier;
+import com.validator.monitor.notifiers.impl.JNotifier;
+import com.validator.monitor.notifiers.impl.JNotifierFileOperationMask;
 import com.validator.monitor.watchers.Watchers;
 
 /**
@@ -33,6 +35,7 @@ public class ValidatorModule implements Module {
 		// Interface Implementations
 		binder.bind(Notifier.class).to(JNotifier.class);
 		binder.bind(FileManager.class).to(FileManagerBean.class);
+		binder.bind(FileOperationMask.class).to(JNotifierFileOperationMask.class);
 	}
 
 	@Provides

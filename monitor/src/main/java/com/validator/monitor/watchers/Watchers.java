@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.validator.monitor.listeners.Listener;
 import com.validator.monitor.notifiers.Notifier;
 
 @Singleton
@@ -21,11 +22,10 @@ public class Watchers {
 		return watchers;
 	}*/
 
-	public void addWatcher(Watcher watcher) throws IOException {
-		int watcherId = 0;
-		watcherId = notifier.addWatcher(watcher);
-		watcher.setWatchId(watcherId);
-		registeredWatchers.put(watcherId, watcher);
+	public int addWatcher(String folderPath, int mask, boolean watchSubtree) throws IOException {
+		Watcher watcher = notifier.addWatcher(folderPath, mask, watchSubtree);
+		registeredWatchers.put(watcher.getWatchId(), watcher);
+		return watcher.getWatchId();
 	}
 
 	public boolean removeWatcher(int watchId) throws IOException {
