@@ -42,6 +42,15 @@
 			<version>3.4.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- mvn install:install-file -Dfile=C:\Users\gaurav1935\Downloads\jnotify-lib-0.94\jnotify-0.94.jar 
+			-DgroupId=net.contentobjects.jnotify -DartifactId=jnotify -Dversion=0.94 
+			-Dpackaging=jar -->
+		<dependency>
+			<groupId>net.contentobjects.jnotify</groupId>
+			<artifactId>jnotify</artifactId>
+			<version>0.94</version>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 </project>
