@@ -7,8 +7,6 @@ import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.name.Named;
-import com.validator.common.file.management.FileManager;
-import com.validator.common.file.management.FileManagerBean;
 import com.validator.common.xml.XmlManager;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
@@ -34,7 +32,6 @@ public class ValidatorModule implements Module {
 
 		// Interface Implementations
 		binder.bind(Notifier.class).to(JNotifier.class);
-		binder.bind(FileManager.class).to(FileManagerBean.class);
 		binder.bind(FileOperationMask.class).to(JNotifierFileOperationMask.class);
 	}
 

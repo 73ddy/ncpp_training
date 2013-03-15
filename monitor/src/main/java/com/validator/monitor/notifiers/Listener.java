@@ -16,8 +16,8 @@ import com.google.inject.Singleton;
 import com.validator.common.constants.Errors;
 import com.validator.common.exceptions.PropertyNotFoundException;
 import com.validator.common.exceptions.XmlTransformationException;
-import com.validator.common.file.management.FileManager;
 import com.validator.common.util.CommonUtil;
+import com.validator.common.util.FileUtil;
 import com.validator.common.util.StringUtil;
 import com.validator.common.xml.XmlManager;
 import com.validator.monitor.entities.Employee;
@@ -28,9 +28,6 @@ public class Listener implements JNotifyListener {
 
 	@Inject
 	XmlManager xmlManager;
-
-	@Inject
-	FileManager fileManager;
 
 	/*
 	 * (non-Javadoc)
@@ -43,14 +40,14 @@ public class Listener implements JNotifyListener {
 		System.out.println(filePath);
 		System.out.println(fileName);
 
-		File newFile = fileManager.getFile(filePath, fileName);
+		File newFile = FileUtil.getFile(filePath, fileName);
 		InputStream inputStream = null;
 
-		if (fileManager.isValidFile(newFile)) {
+		if (FileUtil.isValidFile(newFile)) {
 			LOG.info(StringUtil.concatenateStrings("A new file named ", fileName, " has been created at path - ",
 					filePath, "."));
 			try {
-				if (CommonUtil.isRecognizedFileExtension(fileManager.getFileExtension(fileName))) {
+				if (CommonUtil.isRecognizedFileExtension(FileUtil.getFileExtension(fileName))) {
 					inputStream = processFile(newFile);
 				}
 			} catch (PropertyNotFoundException pNFE) {
@@ -77,7 +74,7 @@ public class Listener implements JNotifyListener {
 		inputStream = new FileInputStream(newFile);
 		Employee employee = (Employee) xmlManager.unmarshal(new BufferedInputStream(inputStream));
 		System.out.println("New employee has been found.");
-		fileManager.markFileProcessed(newFile);
+		FileUtil.markFileProcessed(newFile);
 		return inputStream;
 	}
 
