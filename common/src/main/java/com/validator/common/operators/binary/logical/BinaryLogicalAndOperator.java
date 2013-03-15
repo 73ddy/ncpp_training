@@ -8,9 +8,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 
  * @author gaurav1935
  * 
- * @param <T>
+ * @param <Boolean>
  *            The entity to be validated.
  */
+@SuppressWarnings("hiding")
 @XmlRootElement
 public class BinaryLogicalAndOperator<Boolean> implements BinaryLogicalOperator<Boolean> {
 

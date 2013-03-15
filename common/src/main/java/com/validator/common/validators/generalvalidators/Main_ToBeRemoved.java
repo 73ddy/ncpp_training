@@ -2,7 +2,6 @@ package com.validator.common.validators.generalvalidators;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Date;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -43,7 +42,7 @@ public class Main_ToBeRemoved {
 	}
 
 	private static void marshal() throws JAXBException, PropertyException {
-		AtomicValidator<Employee_ToBeRemoved> validator1 = new AtomicValidator<Employee_ToBeRemoved>();
+		/*AtomicValidator<Employee_ToBeRemoved> validator1 = new AtomicValidator<Employee_ToBeRemoved>();
 		validator1.setField("id");
 		validator1.setValue("3");
 		validator1.setOperator(new UnaryLogicalNotOperator<Boolean>());
@@ -65,7 +64,7 @@ public class Main_ToBeRemoved {
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
 		// Write to System.out
-		m.marshal(binaryValidator, System.out);
+		m.marshal(binaryValidator, System.out);*/
 
 	}
 
