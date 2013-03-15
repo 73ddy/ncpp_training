@@ -6,7 +6,6 @@ import net.contentobjects.jnotify.JNotify;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.validator.monitor.notifiers.Listener;
 import com.validator.monitor.notifiers.Notifier;
 import com.validator.monitor.watchers.Watcher;
 
@@ -14,7 +13,7 @@ import com.validator.monitor.watchers.Watcher;
 public class JNotifier implements Notifier {
 
 	@Inject
-	Listener jNotifyListener;
+	ValidatorJNotifyListener jNotifyListener;
 
 	public Watcher addWatcher(String folderPath, int mask, boolean watchSubtree)
 		throws IOException {

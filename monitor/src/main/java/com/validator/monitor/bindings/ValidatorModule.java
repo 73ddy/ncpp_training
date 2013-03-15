@@ -10,10 +10,10 @@ import com.google.inject.name.Named;
 import com.validator.common.xml.XmlManager;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
-import com.validator.monitor.notifiers.Listener;
 import com.validator.monitor.notifiers.Notifier;
 import com.validator.monitor.notifiers.impl.JNotifier;
 import com.validator.monitor.notifiers.impl.JNotifierFileOperationMask;
+import com.validator.monitor.notifiers.impl.ValidatorJNotifyListener;
 import com.validator.monitor.watchers.Watchers;
 
 /**
@@ -25,7 +25,7 @@ public class ValidatorModule implements Module {
 
 	public void configure(Binder binder) {
 		// Singleton Implementations
-		binder.bind(Listener.class).asEagerSingleton();
+		binder.bind(ValidatorJNotifyListener.class).asEagerSingleton();
 		binder.bind(Watchers.class).asEagerSingleton();
 		binder.bind(JNotifier.class).asEagerSingleton();
 		binder.bind(XmlManager.class).asEagerSingleton();

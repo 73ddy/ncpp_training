@@ -1,4 +1,4 @@
-package com.validator.monitor.notifiers;
+package com.validator.monitor.notifiers.impl;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -23,8 +23,8 @@ import com.validator.common.xml.XmlManager;
 import com.validator.monitor.entities.Employee;
 
 @Singleton
-public class Listener implements JNotifyListener {
-	private static Logger LOG = Logger.getLogger(Listener.class);
+public class ValidatorJNotifyListener implements JNotifyListener {
+	private static Logger LOG = Logger.getLogger(ValidatorJNotifyListener.class);
 
 	@Inject
 	XmlManager xmlManager;

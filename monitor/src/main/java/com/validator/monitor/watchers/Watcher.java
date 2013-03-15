@@ -1,16 +1,16 @@
 package com.validator.monitor.watchers;
 
-import com.validator.monitor.notifiers.Listener;
+import com.validator.monitor.notifiers.impl.ValidatorJNotifyListener;
 
 public class Watcher {
 	private WatchKey watchKey;
 	private String folderPath;
 	private int mask;
 	private boolean watchSubtree;
-	private Listener listener;
+	private ValidatorJNotifyListener listener;
 
 	public Watcher(String folderPath, int mask, boolean watchSubtree,
-			Listener listener) {
+			ValidatorJNotifyListener listener) {
 		this.folderPath = folderPath;
 		this.mask = mask;
 		this.watchSubtree = watchSubtree;
@@ -49,11 +49,11 @@ public class Watcher {
 		this.watchSubtree = watchSubtree;
 	}
 
-	public Listener getListener() {
+	public ValidatorJNotifyListener getListener() {
 		return listener;
 	}
 
-	public void setListener(Listener listener) {
+	public void setListener(ValidatorJNotifyListener listener) {
 		this.listener = listener;
 	}
 }
