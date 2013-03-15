@@ -6,6 +6,8 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
+import sun.security.validator.Validator;
+
 import com.validator.common.constants.Constants;
 import com.validator.common.exceptions.PropertyNotFoundException;
 
@@ -32,7 +34,7 @@ public class ValidatorProperties {
 		InputStream resourceFile = null;
 		properties = new Properties();
 		try {
-			resourceFile = getClass().getResourceAsStream(Constants.PROPERTIES_SEPARATOR.toString());
+			resourceFile = getClass().getResourceAsStream(Constants.PROPERTIES_FILE.toString());
 			properties.load(resourceFile);
 			LOG.info("Validator Properties are successfully loaded.");
 		} catch (IOException e) {
@@ -53,14 +55,36 @@ public class ValidatorProperties {
 	 * This method returns property value against the provided key.
 	 * 
 	 * @param {@link String} key
-	 * @return the value corresponding to a given property name.
+	 * @return String, the value corresponding to a given property name.
 	 * @throws PropertyNotFoundException
 	 *             - if the property is not found in the property file.
 	 */
-	public static String getProperty(String key) throws PropertyNotFoundException {
+	public String getProperty(String key) throws PropertyNotFoundException {
 		String value = null;
 		if (null != properties.getProperty(key)) {
 			value = properties.getProperty(key).trim();
+		} else {
+			String errorMsg = new StringBuilder(key).append(" property not found in property file.").toString();
+			LOG.warn(errorMsg);
+			throw new PropertyNotFoundException(key, errorMsg);
+		}
+		return value;
+	}
+
+	/**
+	 * This method returns property values against the provided key. Use only if
+	 * the value may have multiple values separated by the property separator,
+	 * <code>Constants.PROPERTIES_SEPARATOR</code>.
+	 * 
+	 * @param {@link String} key
+	 * @return String, values corresponding to a given property name.
+	 * @throws PropertyNotFoundException
+	 *             - if the property is not found in the property file.
+	 */
+	public String[] getProperties(String key) throws PropertyNotFoundException {
+		String[] value = null;
+		if (null != properties.getProperty(key)) {
+			value = properties.getProperty(key).trim().split(Constants.PROPERTIES_SEPARATOR.toString());
 		} else {
 			String errorMsg = new StringBuilder(key).append(" property not found in property file.").toString();
 			LOG.warn(errorMsg);
@@ -78,18 +102,40 @@ public class ValidatorProperties {
 	 * @return Integral value of validator property. Returns the default value
 	 *         if the integral value of property is not present.
 	 */
-	public static int getIntProperty(String prop, int defaultValue) {
+	public int getIntProperty(String prop, int defaultValue) {
 		String value = getProperty(prop);
-		int returnValue = 0;
+		int returnValue = defaultValue;
 		if (value != null) {
 			try {
 				returnValue = Integer.parseInt(value);
 			} catch (NumberFormatException e) {
 				LOG.error("getIntProperty: Property value not an int. prop=" + prop + ",value=" + value, e);
-				returnValue = defaultValue;
 			}
 		}
 		return returnValue;
+	}
+
+	/**
+	 * Returns a boolean value of validator property. However, if the value is
+	 * not boolean, then returns the default value passed.
+	 * 
+	 * @param String
+	 *            prop
+	 * @param boolean defaultValue
+	 * @return boolean
+	 */
+	public boolean getBooleanProperty(String prop, boolean defaultValue) {
+		String value = getProperty(prop);
+		boolean returnValue = defaultValue;
+		if (value != null) {
+			try {
+				returnValue = Boolean.getBoolean(value);
+			} catch (NumberFormatException e) {
+				LOG.error("getBooleanProperty: Property value not a boolean. prop=" + prop + ",value=" + value, e);
+			}
+		}
+		return returnValue;
+
 	}
 
 }

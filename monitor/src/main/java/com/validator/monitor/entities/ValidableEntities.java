@@ -1,5 +1,5 @@
 package com.validator.monitor.entities;
 
-abstract class ValidableEntities {
+abstract public class ValidableEntities {
 
 }

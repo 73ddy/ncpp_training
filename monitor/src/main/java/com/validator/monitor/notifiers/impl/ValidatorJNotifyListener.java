@@ -27,7 +27,7 @@ public class ValidatorJNotifyListener implements JNotifyListener {
 	private static Logger LOG = Logger.getLogger(ValidatorJNotifyListener.class);
 
 	@Inject
-	XmlManager xmlManager;
+	private XmlManager xmlManager;
 
 	/*
 	 * (non-Javadoc)
@@ -70,11 +70,9 @@ public class ValidatorJNotifyListener implements JNotifyListener {
 	}
 
 	private InputStream processFile(File newFile) throws FileNotFoundException, IllegalAccessException {
-		InputStream inputStream;
-		inputStream = new FileInputStream(newFile);
+		InputStream inputStream = new FileInputStream(newFile);
 		Employee employee = (Employee) xmlManager.unmarshal(new BufferedInputStream(inputStream));
 		System.out.println("New employee has been found.");
-		FileUtil.markFileProcessed(newFile);
 		return inputStream;
 	}
 

@@ -10,7 +10,7 @@
             <Value>gaurav</Value>
             <binaryEqualsOperator/>
         </atomicValidatorRHS>
-        <binaryLogicalAndOperator/>
+        <binaryLogicalOrOperator/>
     </binaryValidatorLHS>
     <atomicValidatorRHS>
         <Field>id</Field>

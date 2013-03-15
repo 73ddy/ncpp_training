@@ -7,7 +7,10 @@ package com.validator.common.constants;
  */
 public enum PropertyKeys {
 	RECOGNIZED_FILE_EXTENSIONS("recognized.file.extensions"),
-	DEFAULT_OBJECT_POOL_SIZE("default.object.pool.size");
+	DEFAULT_OBJECT_POOL_SIZE("default.object.pool.size"),
+	VALIDATOR_FILE("validator.file"),
+	FOLDERS_TO_BE_WATCHED("target.folders"),
+	WATCH_SUBTREE("watch.subtree");
 
 	String name;
 

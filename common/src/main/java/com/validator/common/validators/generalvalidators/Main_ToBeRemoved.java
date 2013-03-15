@@ -12,9 +12,11 @@ import javax.xml.bind.Unmarshaller;
 import com.validator.common.operators.binary.arithmetic.BinaryEqualsOperator;
 import com.validator.common.operators.binary.arithmetic.BinaryGreaterThanOperator;
 import com.validator.common.operators.binary.logical.BinaryLogicalAndOperator;
+import com.validator.common.operators.binary.logical.BinaryLogicalOrOperator;
 import com.validator.common.operators.unary.logical.UnaryLogicalNotOperator;
 import com.validator.common.validators.entityvalidators.AtomicValidator;
 import com.validator.common.validators.entityvalidators.BinaryValidator;
+import com.validator.common.validators.entityvalidators.Validator;
 
 public class Main_ToBeRemoved {
 
@@ -30,10 +32,10 @@ public class Main_ToBeRemoved {
 
 	private static void unmarshal() throws JAXBException, FileNotFoundException {
 		JAXBContext context = JAXBContext.newInstance(AtomicValidator.class, UnaryLogicalNotOperator.class,
-				BinaryLogicalAndOperator.class, BinaryEqualsOperator.class, BinaryValidator.class);
+				BinaryLogicalAndOperator.class, BinaryLogicalOrOperator.class, BinaryEqualsOperator.class, BinaryValidator.class);
 		System.out.println("Output from our XML File: ");
 		Unmarshaller um = context.createUnmarshaller();
-		BinaryValidator binValidator = (BinaryValidator) um.unmarshal(new FileReader("sampleinput1.xml"));
+		Validator binValidator = (Validator) um.unmarshal(new FileReader("validator.xml"));
 		Employee_ToBeRemoved emp = new Employee_ToBeRemoved();
 		emp.setId(3);
 		emp.setName("gaurav");
@@ -42,7 +44,7 @@ public class Main_ToBeRemoved {
 	}
 
 	private static void marshal() throws JAXBException, PropertyException {
-		/*AtomicValidator<Employee_ToBeRemoved> validator1 = new AtomicValidator<Employee_ToBeRemoved>();
+		AtomicValidator<Employee_ToBeRemoved> validator1 = new AtomicValidator<Employee_ToBeRemoved>();
 		validator1.setField("id");
 		validator1.setValue("3");
 		validator1.setOperator(new UnaryLogicalNotOperator<Boolean>());
@@ -53,18 +55,18 @@ public class Main_ToBeRemoved {
 		validator2.setOperator(new BinaryGreaterThanOperator<Employee_ToBeRemoved>());
 
 		BinaryValidator<Employee_ToBeRemoved> validator3 = new BinaryValidator<Employee_ToBeRemoved>(validator1,
-				validator2, new BinaryEqualsOperator<Employee_ToBeRemoved>());
+				validator2, new BinaryLogicalOrOperator<Boolean>());
 
 		BinaryValidator<Employee_ToBeRemoved> binaryValidator = new BinaryValidator<Employee_ToBeRemoved>(validator3,
 				validator2, new BinaryLogicalAndOperator<Boolean>());
 
 		JAXBContext context = JAXBContext.newInstance(AtomicValidator.class, BinaryValidator.class,
-				UnaryLogicalNotOperator.class, BinaryLogicalAndOperator.class, BinaryGreaterThanOperator.class, BinaryEqualsOperator.class);
+				UnaryLogicalNotOperator.class, BinaryLogicalAndOperator.class,BinaryLogicalOrOperator.class, BinaryGreaterThanOperator.class, BinaryEqualsOperator.class);
 		Marshaller m = context.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
 		// Write to System.out
-		m.marshal(binaryValidator, System.out);*/
+		m.marshal(binaryValidator, System.out);
 
 	}
 

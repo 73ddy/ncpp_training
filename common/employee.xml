@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee>
+    <id>2</id>
+    <name>gaurav</name>
+    <dateOfJoining>2013-02-28T03:23:47.244+05:30</dateOfJoining>
+</employee>

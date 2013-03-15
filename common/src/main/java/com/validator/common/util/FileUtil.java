@@ -9,18 +9,18 @@ public class FileUtil {
 	}
 
 	/**
-	 * Marks a file as PROCESSED, so as to identify the processed and the raw
-	 * files.
+	 * Rename the file. files.
 	 * 
-	 * @param file
+	 * @param File
+	 *            , file
 	 * @throws IllegalAccessException
 	 */
-	public static void markFileProcessed(File file) throws IllegalAccessException {
+	public static void renameFile(File file, String newFileName) throws IllegalAccessException {
 		if (null == file) {
 			throw new IllegalArgumentException("File passed cannot be null.");
 		}
 		if (file.canWrite()) {
-			file.renameTo(new File(StringUtil.concatenateStrings(file.getAbsolutePath(), ".processed")));
+			file.renameTo(new File(StringUtil.concatenateStrings(newFileName)));
 		} else {
 			throw new IllegalAccessException("Isufficient Rights for marking a file processed.");
 		}
@@ -29,7 +29,8 @@ public class FileUtil {
 	/**
 	 * Checks if the file is a file which has to be processed.
 	 * 
-	 * @param file
+	 * @param File
+	 *            , file
 	 * @return true- if the file is a file which has to be processed.
 	 */
 	public static boolean isValidFile(File file) {
@@ -43,9 +44,11 @@ public class FileUtil {
 	/**
 	 * Returns the file object form its file path and filename.
 	 * 
-	 * @param filePath
-	 * @param fileName
-	 * @return a file object
+	 * @param String
+	 *            , filePath
+	 * @param String
+	 *            , fileName
+	 * @return File, file object
 	 */
 	public static File getFile(String filePath, String fileName) {
 		File file = null;
@@ -59,8 +62,9 @@ public class FileUtil {
 	/**
 	 * Returns the file extension associated with the file name.
 	 * 
-	 * @param fileName
-	 * @return returns the file extension
+	 * @param String
+	 *            , fileName
+	 * @return String, the file extension
 	 */
 	public static String getFileExtension(String fileName) {
 		if (null == fileName) {
