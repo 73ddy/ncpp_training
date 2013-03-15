@@ -9,7 +9,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 
 import com.google.inject.Injector;
-import com.validator.common.validators.generalvalidators.ValidationHelper;
 import com.validator.monitor.bindings.GuiceInjector;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
@@ -26,8 +25,9 @@ public class Main {
 		
 		FileOperationMask fileOperationMask = injector.getInstance(FileOperationMask.class);
 		
-		injector.getInstance(Watchers.class).addWatcher(path, fileOperationMask.getFileCreatedMask(),watchSubtree);
-		
+		Watchers watchers = injector.getInstance(Watchers.class);
+		watchers.addWatcher(path, fileOperationMask.getFileCreatedMask(),watchSubtree);
+		System.out.println(watchers.getRegisteredWatchers().size());
 		while (true) {
 			Thread.sleep(100000);
 		}

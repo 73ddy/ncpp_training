@@ -3,7 +3,7 @@ package com.validator.monitor.watchers;
 import com.validator.monitor.listeners.Listener;
 
 public class Watcher {
-	private int watchId;
+	private WatchKey watchKey;
 	private String folderPath;
 	private int mask;
 	private boolean watchSubtree;
@@ -17,12 +17,12 @@ public class Watcher {
 		this.listener = listener;
 	}
 
-	public int getWatchId() {
-		return watchId;
+	public WatchKey getWatchKey() {
+		return watchKey;
 	}
 
-	public void setWatchId(int watchId) {
-		this.watchId = watchId;
+	public void setWatchKey(WatchKey watchKey) {
+		this.watchKey = watchKey;
 	}
 
 	public String getFolderPath() {

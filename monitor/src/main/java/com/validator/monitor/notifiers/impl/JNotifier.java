@@ -20,7 +20,7 @@ public class JNotifier implements Notifier {
 		throws IOException {
 		Watcher watcher = new Watcher(folderPath, mask, watchSubtree, jNotifyListener);
 		int watcherId = JNotify.addWatch(folderPath, mask, watchSubtree, jNotifyListener);
-		watcher.setWatchId(watcherId);
+		watcher.setWatchKey(new JNotifyWatchKey(watcherId));
 		return watcher;
 	}
 
