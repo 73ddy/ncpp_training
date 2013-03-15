@@ -26,7 +26,7 @@ public final class UnmarshallerPool extends ObjectPool<Unmarshaller> {
      * @param context JAXBContext to use for unmarshalling.
      */
     @Inject
-    public UnmarshallerPool(@Named("responseContext") JAXBContext context) {
+    public UnmarshallerPool(@Named("unmarshalContext") JAXBContext context) {
         this.context = context;
     }
 

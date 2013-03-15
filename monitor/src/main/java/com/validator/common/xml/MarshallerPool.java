@@ -26,7 +26,7 @@ public final class MarshallerPool extends ObjectPool<Marshaller> {
 	 *            JAXBContext to use for marshalling.
 	 */
 	@Inject
-	public MarshallerPool(@Named("requestContext") JAXBContext context) {
+	public MarshallerPool(@Named("marshalContext") JAXBContext context) {
 		this.context = context;
 	}
 
