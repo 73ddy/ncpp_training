@@ -6,7 +6,7 @@ import net.contentobjects.jnotify.JNotify;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.validator.monitor.listeners.Listener;
+import com.validator.monitor.notifiers.Listener;
 import com.validator.monitor.notifiers.Notifier;
 import com.validator.monitor.watchers.Watcher;
 

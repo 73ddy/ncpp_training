@@ -1,4 +1,4 @@
-package com.validator.monitor.listeners;
+package com.validator.monitor.notifiers;
 
 import java.io.BufferedInputStream;
 import java.io.File;

@@ -1,6 +1,6 @@
 package com.validator.monitor.watchers;
 
-import com.validator.monitor.listeners.Listener;
+import com.validator.monitor.notifiers.Listener;
 
 public class Watcher {
 	private WatchKey watchKey;
