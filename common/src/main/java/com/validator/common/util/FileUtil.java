@@ -16,7 +16,9 @@ public class FileUtil {
 	 * @throws IllegalAccessException
 	 */
 	public static void markFileProcessed(File file) throws IllegalAccessException {
-		// TODO: is file renamed
+		if (null == file) {
+			throw new IllegalArgumentException("File passed cannot be null.");
+		}
 		if (file.canWrite()) {
 			file.renameTo(new File(StringUtil.concatenateStrings(file.getAbsolutePath(), ".processed")));
 		} else {
@@ -32,7 +34,7 @@ public class FileUtil {
 	 */
 	public static boolean isValidFile(File file) {
 		boolean isValidFile = false;
-		if (file.isFile()) {
+		if ((null != file) && file.isFile()) {
 			isValidFile = true;
 		}
 		return isValidFile;
@@ -46,7 +48,12 @@ public class FileUtil {
 	 * @return a file object
 	 */
 	public static File getFile(String filePath, String fileName) {
-		return new File(new StringBuilder(filePath).append(CommonUtil.getFileSeparator()).append(fileName).toString());
+		File file = null;
+		if ((null != fileName) && (null != fileName) && (!fileName.isEmpty()) && (!fileName.isEmpty())) {
+			file = new File(new StringBuilder(filePath).append(CommonUtil.getFileSeparator()).append(fileName)
+					.toString());
+		}
+		return file;
 	}
 
 	/**
@@ -56,6 +63,9 @@ public class FileUtil {
 	 * @return returns the file extension
 	 */
 	public static String getFileExtension(String fileName) {
+		if (null == fileName) {
+			throw new IllegalArgumentException();
+		}
 		return CommonUtil.getFileExtension(fileName);
 	}
 }

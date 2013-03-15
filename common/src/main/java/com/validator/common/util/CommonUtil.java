@@ -47,10 +47,14 @@ public class CommonUtil {
 	 *         extension(is a file that needs to be processed)
 	 */
 	public static boolean isRecognizedFileExtension(String fileExtension) {
-		String[] recognizedExtensions;
-		String extensions = ValidatorProperties.getInstance().getProperty(
-				PropertyKeys.RECOGNIZED_FILE_EXTENSIONS.toString());
-		recognizedExtensions = extensions.split(Constants.PROPERTIES_SEPARATOR.toString());
-		return Arrays.asList(recognizedExtensions).contains(fileExtension);
+		boolean isRecognizedFileExtension = false;
+		if ((null != fileExtension) && (!fileExtension.isEmpty())) {
+			String[] recognizedExtensions;
+			String extensions = ValidatorProperties.getInstance().getProperty(
+					PropertyKeys.RECOGNIZED_FILE_EXTENSIONS.toString());
+			recognizedExtensions = extensions.split(Constants.PROPERTIES_SEPARATOR.toString());
+			isRecognizedFileExtension = Arrays.asList(recognizedExtensions).contains(fileExtension);
+		}
+		return isRecognizedFileExtension;
 	}
 }
