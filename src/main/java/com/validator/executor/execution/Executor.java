@@ -2,8 +2,8 @@ package com.validator.executor.execution;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.apache.log4j.Logger;
 
@@ -28,48 +28,67 @@ public class Executor {
 
 	private static XmlManager xmlManager;
 
-	private static Injector injector;
+	private static Injector injector = GuiceInjector.getInjector();
 
 	@SuppressWarnings("rawtypes")
 	private static Validator validator;
 
 	private static FileOperationMask fileOperationMask;
 	private static Watchers watchers;
-	
+
 	private static ValidatorProperties validatorProperties = ValidatorProperties.getInstance();
-	
-	@SuppressWarnings("rawtypes")
+
 	public static void main(String[] args) throws PropertyNotFoundException, IOException, InterruptedException {
-		String validatorFilePath = null;
-		String[] foldersToBeWatched = null;
-		boolean watchSubtree = false;
-		
-		// Initialize the guice injector and inject beans
-		injector = GuiceInjector.getInjector();
-		LOG.info("Guice Injector was successfully set.");
-		xmlManager = injector.getInstance(XmlManager.class);
+		injectBeans();
 
 		// Unmarshal validation rules from xml
-		validatorFilePath = validatorProperties.getProperty(
-				PropertyKeys.VALIDATOR_FILE.toString());
-		InputStream inputStream = new FileInputStream(validatorFilePath);
-		validator = (Validator) xmlManager.unmarshal(new BufferedInputStream(inputStream));
-		LOG.info("Validator successfully extracted from validator file.");
-		System.out.println(validator);
-		
-		// Add watcher
-		foldersToBeWatched = validatorProperties.getProperties(PropertyKeys.FOLDERS_TO_BE_WATCHED.toString());
-		watchSubtree = validatorProperties.getBooleanProperty(PropertyKeys.WATCH_SUBTREE.toString(), false);
-		fileOperationMask = injector.getInstance(FileOperationMask.class);
-		watchers = injector.getInstance(Watchers.class);
-		for (String folderToBeWatched: foldersToBeWatched) {
-		    watchers.addWatcher(folderToBeWatched.trim(), fileOperationMask.getFileCreatedMask(),watchSubtree);
-		}
-		System.out.println(watchers.getRegisteredWatchers().size());
-		
+		initializeValidator();
+
+		// Add watcher and start listening for changes in the target folders
+		loadWatchersFromConfigurationFile();
+
 		while (true) {
 			Thread.sleep(100000);
 		}
-		
+
+	}
+
+	/**
+	 * Fetches watchers information from the configuration file and initializes
+	 * the watchers
+	 * 
+	 * @throws IOException
+	 */
+	private static void loadWatchersFromConfigurationFile() throws IOException {
+		String[] foldersToBeWatched;
+		boolean watchSubtree;
+		foldersToBeWatched = validatorProperties.getProperties(PropertyKeys.FOLDERS_TO_BE_WATCHED.toString());
+		watchSubtree = validatorProperties.getBooleanProperty(PropertyKeys.WATCH_SUBTREE.toString(), false);
+		watchers = injector.getInstance(Watchers.class);
+		for (String folderToBeWatched : foldersToBeWatched) {
+			watchers.addWatcher(folderToBeWatched.trim(), fileOperationMask.getFileCreatedMask(), watchSubtree);
+		}
+		System.out.println("Total watchers - " + Watchers.getRegisteredWatchers().size());
+	}
+
+	/**
+	 * Initializes the validator object, which will be used for validating the
+	 * entities.
+	 * 
+	 * @throws FileNotFoundException
+	 */
+	private static void initializeValidator() throws FileNotFoundException {
+		String validatorFilePath = validatorProperties.getProperty(PropertyKeys.VALIDATOR_FILE.toString());
+		validator = (Validator) xmlManager.unmarshal(new BufferedInputStream(new FileInputStream(validatorFilePath)));
+		LOG.info("Validator successfully extracted from validator file.");
+		System.out.println(validator);
+	}
+
+	/**
+	 * Inject the required Google Guice Beans
+	 */
+	private static void injectBeans() {
+		xmlManager = injector.getInstance(XmlManager.class);
+		fileOperationMask = injector.getInstance(FileOperationMask.class);
 	}
 }

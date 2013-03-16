@@ -2,9 +2,14 @@ package com.validator.monitor.notifiers.impl;
 
 import com.validator.monitor.watchers.WatchKey;
 
+/**
+ * Watcher implementation for JNotify.
+ * 
+ * @author gaurav1935
+ */
 public class JNotifyWatchKey extends WatchKey {
 
-	Integer watchKey;
+	private Integer watchKey;
 
 	JNotifyWatchKey(Integer assignedWatchKey) {
 		this.watchKey = assignedWatchKey;
