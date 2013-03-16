@@ -45,12 +45,16 @@ public class Executor {
 		loadWatchersFromConfigurationFile();
 		
 		// Run the raw entity consumer
-		Thread rawEntityConsumerThread = new Thread(new RawEntityConsumer());
-		rawEntityConsumerThread.start();
+		runEntityProcessorThread();
 
 		while (true) {
 			Thread.sleep(100000);
 		}
+	}
+
+	private static void runEntityProcessorThread() {
+		Thread rawEntityConsumerThread = new Thread(new RawEntityConsumer());
+		rawEntityConsumerThread.start();
 	}
 
 	/**
