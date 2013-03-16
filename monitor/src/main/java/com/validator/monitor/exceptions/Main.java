@@ -9,7 +9,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 
 import com.google.inject.Injector;
-import com.validator.monitor.bindings.GuiceInjector;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.watchers.Watchers;
@@ -21,7 +20,7 @@ public class Main {
 
 		String path = "F:\\TargetFolder";// System.getProperty("user.dir");
 		boolean watchSubtree = false;
-		injector = GuiceInjector.getInjector();
+		//injector = GuiceInjector.getInjector();
 		
 		FileOperationMask fileOperationMask = injector.getInstance(FileOperationMask.class);
 		

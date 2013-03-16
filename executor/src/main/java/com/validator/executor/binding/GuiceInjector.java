@@ -1,4 +1,4 @@
-package com.validator.monitor.bindings;
+package com.validator.executor.binding;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;

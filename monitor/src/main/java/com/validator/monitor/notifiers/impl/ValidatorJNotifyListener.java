@@ -1,11 +1,6 @@
 package com.validator.monitor.notifiers.impl;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
 import net.contentobjects.jnotify.JNotifyListener;
 
@@ -13,21 +8,18 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.validator.common.constants.Errors;
-import com.validator.common.exceptions.PropertyNotFoundException;
-import com.validator.common.exceptions.XmlTransformationException;
 import com.validator.common.util.CommonUtil;
 import com.validator.common.util.FileUtil;
 import com.validator.common.util.StringUtil;
-import com.validator.common.xml.XmlManager;
-import com.validator.monitor.entities.Employee;
+import com.validator.monitor.rawentitystore.RawEntityStore;
 
 @Singleton
 public class ValidatorJNotifyListener implements JNotifyListener {
+	
 	private static Logger LOG = Logger.getLogger(ValidatorJNotifyListener.class);
-
+	
 	@Inject
-	private XmlManager xmlManager;
+	private RawEntityStore rawEntityStore;
 
 	/*
 	 * (non-Javadoc)
@@ -36,45 +28,41 @@ public class ValidatorJNotifyListener implements JNotifyListener {
 	 * java.lang.String, java.lang.String)
 	 */
 	public void fileCreated(int noOfFiles, String filePath, String fileName) {
+		// TODO: to be removed sysouts
 		System.out.println(noOfFiles);
 		System.out.println(filePath);
 		System.out.println(fileName);
 
 		File newFile = FileUtil.getFile(filePath, fileName);
-		InputStream inputStream = null;
-
+		String fileExtension = null;
+		
 		if (FileUtil.isValidFile(newFile)) {
 			LOG.info(StringUtil.concatenateStrings("A new file named ", fileName, " has been created at path - ",
 					filePath, "."));
+			fileExtension = FileUtil.getFileExtension(fileName);
 			try {
-				if (CommonUtil.isRecognizedFileExtension(FileUtil.getFileExtension(fileName))) {
-					inputStream = processFile(newFile);
+				if (CommonUtil.isRecognizedFileExtension(fileExtension)) {
+					LOG.info(StringUtil.concatenateStrings("File: ", newFile.toString(), ", will be processed."));
+					rawEntityStore.putRawFile(newFile);
 				}
-			} catch (PropertyNotFoundException pNFE) {
-				LOG.error(Errors.RECOGNIZED_EXTENSIONS_NOT_DEFINED, pNFE);
-			} catch (FileNotFoundException e) {
-				LOG.error(Errors.FILE_NOT_FOUND, e);
-			} catch (XmlTransformationException xmlTE) {
-				LOG.error(Errors.FAILED_TO_UNMARSHAL_ENTITY, xmlTE);
-			} catch (IllegalAccessException iAE) {
-				LOG.error(iAE.getMessage(), iAE);
-			} finally {
+			} catch (InterruptedException iE) {
+				LOG.error("Failed to put the file in the raw entity store. Marking the file unprocessed.", iE);
 				try {
-					inputStream.close();
-				} catch (IOException e) {
-					// eating up the exception.
+					FileUtil.renameFile(newFile, StringUtil.concatenateStrings(newFile.getName(), ".unprocessed"));
+				} catch (IllegalAccessException e) {
+					LOG.error("Failed to mark the file unprocessed.",e);
 				}
 			}
 		}
 
 	}
 
-	private InputStream processFile(File newFile) throws FileNotFoundException, IllegalAccessException {
+	/*private InputStream processFile(File newFile) throws FileNotFoundException, IllegalAccessException {
 		InputStream inputStream = new FileInputStream(newFile);
 		Employee employee = (Employee) xmlManager.unmarshal(new BufferedInputStream(inputStream));
 		System.out.println("New employee has been found.");
 		return inputStream;
-	}
+	}*/
 
 	public void fileDeleted(int arg0, String arg1, String arg2) {
 		// IGNORE

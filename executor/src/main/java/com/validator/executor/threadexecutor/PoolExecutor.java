@@ -6,16 +6,17 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import com.google.inject.Singleton;
 import com.validator.common.constants.PropertyKeys;
 import com.validator.common.util.ValidatorProperties;
 import com.validator.executor.processors.Processor;
-import com.validator.monitor.entities.ValidableEntities;
 
 /**
  * The Pool Executor is responsible for processing/validating entities.
  * 
  * @author gaurav1935
  */
+@Singleton
 public class PoolExecutor {
 	private static final ValidatorProperties validatorProperties = ValidatorProperties.getInstance();
 
@@ -40,7 +41,7 @@ public class PoolExecutor {
 	/**
 	 * @param {@link }processor
 	 */
-	public static void addProcessor(Processor<ValidableEntities> processor){
+	public static void addProcessor(Processor processor){
 		executor.execute(processor);
 	}	
 }

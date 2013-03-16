@@ -1,4 +1,4 @@
-package com.validator.monitor.bindings;
+package com.validator.executor.binding;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -15,12 +15,14 @@ import com.validator.common.operators.unary.logical.UnaryLogicalNotOperator;
 import com.validator.common.validators.entityvalidators.AtomicValidator;
 import com.validator.common.validators.entityvalidators.UnaryValidator;
 import com.validator.common.xml.XmlManager;
+import com.validator.executor.threadexecutor.PoolExecutor;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.notifiers.Notifier;
 import com.validator.monitor.notifiers.impl.JNotifier;
 import com.validator.monitor.notifiers.impl.JNotifierFileOperationMask;
 import com.validator.monitor.notifiers.impl.ValidatorJNotifyListener;
+import com.validator.monitor.rawentitystore.RawEntityStore;
 import com.validator.monitor.watchers.Watchers;
 
 /**
@@ -42,6 +44,8 @@ public class ValidatorModule implements Module {
 		binder.bind(Watchers.class).asEagerSingleton();
 		binder.bind(JNotifier.class).asEagerSingleton();
 		binder.bind(XmlManager.class).asEagerSingleton();
+		binder.bind(RawEntityStore.class).asEagerSingleton();
+		binder.bind(PoolExecutor.class).asEagerSingleton();
 
 		// Interface Implementations
 		binder.bind(Notifier.class).to(JNotifier.class);

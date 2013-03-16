@@ -13,7 +13,8 @@ import com.validator.common.exceptions.PropertyNotFoundException;
 import com.validator.common.util.ValidatorProperties;
 import com.validator.common.validators.entityvalidators.Validator;
 import com.validator.common.xml.XmlManager;
-import com.validator.monitor.bindings.GuiceInjector;
+import com.validator.executor.binding.GuiceInjector;
+import com.validator.executor.threadexecutor.RawEntityConsumer;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.watchers.Watchers;
 
@@ -25,20 +26,16 @@ import com.validator.monitor.watchers.Watchers;
 public class Executor {
 
 	private static Logger LOG = Logger.getLogger(Executor.class);
-
 	private static XmlManager xmlManager;
-
 	private static Injector injector = GuiceInjector.getInjector();
-
 	@SuppressWarnings("rawtypes")
 	private static Validator validator;
-
 	private static FileOperationMask fileOperationMask;
 	private static Watchers watchers;
-
 	private static ValidatorProperties validatorProperties = ValidatorProperties.getInstance();
 
 	public static void main(String[] args) throws PropertyNotFoundException, IOException, InterruptedException {
+		// Initialize the beans to be used
 		injectBeans();
 
 		// Unmarshal validation rules from xml
@@ -46,11 +43,14 @@ public class Executor {
 
 		// Add watcher and start listening for changes in the target folders
 		loadWatchersFromConfigurationFile();
+		
+		// Run the raw entity consumer
+		Thread rawEntityConsumerThread = new Thread(new RawEntityConsumer());
+		rawEntityConsumerThread.start();
 
 		while (true) {
 			Thread.sleep(100000);
 		}
-
 	}
 
 	/**
@@ -77,6 +77,7 @@ public class Executor {
 	 * 
 	 * @throws FileNotFoundException
 	 */
+	@SuppressWarnings("rawtypes")
 	private static void initializeValidator() throws FileNotFoundException {
 		String validatorFilePath = validatorProperties.getProperty(PropertyKeys.VALIDATOR_FILE.toString());
 		validator = (Validator) xmlManager.unmarshal(new BufferedInputStream(new FileInputStream(validatorFilePath)));
