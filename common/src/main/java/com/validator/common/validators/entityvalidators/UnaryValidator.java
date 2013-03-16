@@ -31,7 +31,8 @@ public class UnaryValidator<T> implements Validator<T> {
 	public UnaryValidator() {
 	}
 
-	public UnaryValidator(Validator<T> validator, Operator booleanOperator) {
+	@SuppressWarnings("unchecked")
+	public UnaryValidator(Validator<T> validator, @SuppressWarnings("rawtypes") Operator booleanOperator) {
 		this.validator = validator;
 		this.operator = booleanOperator;
 	}

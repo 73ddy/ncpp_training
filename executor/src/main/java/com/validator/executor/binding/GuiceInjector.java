@@ -12,7 +12,7 @@ public class GuiceInjector {
 	private static Injector injector;
 
 	static {
-		injector = Guice.createInjector(new ValidatorModule());
+		injector = Guice.createInjector(new MonitorValidatorModule());
 	}
 
 	public static Injector getInjector() {

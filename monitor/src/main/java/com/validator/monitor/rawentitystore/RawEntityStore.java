@@ -8,7 +8,6 @@ import java.util.concurrent.BlockingQueue;
 
 import org.apache.log4j.Logger;
 
-import com.google.inject.Singleton;
 import com.validator.common.util.StringUtil;
 
 /**
@@ -16,11 +15,16 @@ import com.validator.common.util.StringUtil;
  * 
  * @author gaurav1935
  */
-@Singleton
 public class RawEntityStore {
 	private static Logger LOG = Logger.getLogger(RawEntityStore.class);
 	private static final BlockingQueue<File> queue = new ArrayBlockingQueue<File>(10);
+	private static RawEntityStore instance = new RawEntityStore();
+	
+	public static RawEntityStore getInstance() {
+		return instance;
+	}
 
+	
 	/**
 	 * Stores the file to the raw entity store for processing later.
 	 * 

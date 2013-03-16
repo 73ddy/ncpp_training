@@ -1,4 +1,4 @@
-package com.validator.common.xml;
+package com.validator.monitor.xml;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

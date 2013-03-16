@@ -3,7 +3,8 @@ package com.validator.executor.threadexecutor;
 import java.io.File;
 import java.util.List;
 
-import com.google.inject.Inject;
+import com.google.inject.Injector;
+import com.validator.executor.binding.GuiceInjector;
 import com.validator.executor.processors.Processor;
 import com.validator.executor.processors.impl.EmployeeProcessor;
 import com.validator.monitor.rawentitystore.RawEntityStore;
@@ -16,8 +17,12 @@ import com.validator.monitor.rawentitystore.RawEntityStore;
  */
 public class RawEntityConsumer implements Runnable {
 
-	@Inject
-	RawEntityStore rawEntityStore;
+	private RawEntityStore rawEntityStore;
+
+	public RawEntityConsumer() {
+		Injector injector = GuiceInjector.getInjector();
+		rawEntityStore = injector.getInstance(RawEntityStore.class);
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -32,7 +37,9 @@ public class RawEntityConsumer implements Runnable {
 			if (null != (rawFiles = rawEntityStore.getRawFiles())) {
 				for (File file : rawFiles) {
 					processor = new EmployeeProcessor(file);
-					PoolExecutor.addProcessor(processor);
+					if (null != processor.getEntity()) {
+						PoolExecutor.addProcessor(processor);
+					}
 				}
 			}
 			try {

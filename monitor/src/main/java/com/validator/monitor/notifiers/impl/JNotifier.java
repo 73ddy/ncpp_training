@@ -24,7 +24,7 @@ public class JNotifier implements Notifier {
 	private static Logger LOG = Logger.getLogger(JNotifier.class);
 	
 	@Inject
-	ValidatorJNotifyListener jNotifyListener;
+	private ValidatorJNotifyListener jNotifyListener;
 
 	@Override
 	public Watcher addWatcher(String folderPath, int mask, boolean watchSubtree) throws IOException {

@@ -1,7 +1,5 @@
 package com.validator.common.validators.generalvalidators;
 
-import java.util.Collection;
-import java.util.Date;
 
 /**
  * Validation class used for validation. The class is an implementation of the

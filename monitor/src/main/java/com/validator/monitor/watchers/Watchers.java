@@ -24,7 +24,7 @@ public class Watchers {
 	private static Logger LOG = Logger.getLogger(Watchers.class);
 
 	@Inject
-	Notifier notifier;
+	private Notifier notifier;
 
 	/**
 	 * Poor man's cache, maps each {@link Watcher} with it watch key. The
@@ -104,7 +104,6 @@ public class Watchers {
 		} else {
 			LOG.warn("Failed to clear all the watchers as no watchers registered.");
 		}
-
 	}
 
 }

@@ -1,8 +1,10 @@
-package com.validator.common.xml;
+package com.validator.monitor.xml;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.log4j.Logger;
+
+import com.validator.common.util.StringUtil;
 
 /**
  * Object Pool is a generic pool of objects. An object pool can be configured to
@@ -56,8 +58,8 @@ public abstract class ObjectPool<T> {
 			}
 			initialized = true;
 			if (LOG.isDebugEnabled()) {
-				LOG.debug("OPENBET " + this.getClass().getSimpleName() + ".initPool: "
-						+ (System.currentTimeMillis() - start) + " ms");
+				LOG.debug(StringUtil.concatenateStrings(this.getClass().getSimpleName(), ".initPool: ",
+						new Long(System.currentTimeMillis() - start).toString(), " ms"));
 			}
 		}
 	}

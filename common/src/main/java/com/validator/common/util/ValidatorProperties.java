@@ -6,8 +6,6 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-import sun.security.validator.Validator;
-
 import com.validator.common.constants.Constants;
 import com.validator.common.exceptions.PropertyNotFoundException;
 

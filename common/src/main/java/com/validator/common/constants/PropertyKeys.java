@@ -14,7 +14,9 @@ public enum PropertyKeys {
 	EXECUTOR_CORE_POOL_SIZE("executor.core.pool.size"),
 	EXECUTOR_MAX_POOL_SIZE("executor.max.pool.size"),
 	EXECUTOR_KEEP_ALIVE_TIME("executor.keep.alive.time"),
-	EXECUTOR_PROCESSOR_QUEUE_SIZE("executor.processor.queue.size");
+	EXECUTOR_PROCESSOR_QUEUE_SIZE("executor.processor.queue.size"),
+	PROCESSED_FILE_NAME_SUFFIX("processed.file.name.suffix"),
+	INVALID_FILE_NAME_SUFFIX("invalid.file.name.suffix");
 
 	String name;
 

@@ -1,6 +1,5 @@
 package com.validator.common.validators.entityvalidators;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -25,9 +24,11 @@ public class AtomicValidator<T> implements Validator<T> {
 	private String field;
 	@XmlElement(name = "Value")
 	private String value;
+	@SuppressWarnings("rawtypes")
 	@XmlAnyElement(lax = true)
 	private Operator operator = null;
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public boolean validate(T t) {
 		Class classType = t.getClass();
 		Class fieldType = isValidField(classType);
@@ -79,6 +80,7 @@ public class AtomicValidator<T> implements Validator<T> {
 		return actualValue;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private Class isValidField(Class entityClass) {
 		String fieldName = null;
 		Class fieldType = null;
@@ -108,11 +110,12 @@ public class AtomicValidator<T> implements Validator<T> {
 		this.field = field;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public Operator getOperator() {
 		return operator;
 	}
 
-	public void setOperator(Operator operator) {
+	public void setOperator(@SuppressWarnings("rawtypes") Operator operator) {
 		this.operator = operator;
 	}
 

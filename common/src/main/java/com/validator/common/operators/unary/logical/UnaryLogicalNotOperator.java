@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @param <T>
  *            The entity to be validated.
  */
+@SuppressWarnings("hiding")
 @XmlRootElement
 public class UnaryLogicalNotOperator<Boolean> implements UnaryLogicalOperator<Boolean> {
 

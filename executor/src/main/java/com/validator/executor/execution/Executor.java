@@ -12,11 +12,11 @@ import com.validator.common.constants.PropertyKeys;
 import com.validator.common.exceptions.PropertyNotFoundException;
 import com.validator.common.util.ValidatorProperties;
 import com.validator.common.validators.entityvalidators.Validator;
-import com.validator.common.xml.XmlManager;
 import com.validator.executor.binding.GuiceInjector;
 import com.validator.executor.threadexecutor.RawEntityConsumer;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.watchers.Watchers;
+import com.validator.monitor.xml.XmlManager;
 
 /**
  * The executor class containing the main method.

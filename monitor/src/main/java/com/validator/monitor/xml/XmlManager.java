@@ -1,4 +1,4 @@
-package com.validator.common.xml;
+package com.validator.monitor.xml;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -28,6 +28,7 @@ import com.validator.common.exceptions.XmlTransformationException;
  */
 @Singleton
 public class XmlManager {
+	
 	private static final Logger LOG = Logger.getLogger(XmlManager.class);
 
 	@Inject
@@ -55,7 +56,7 @@ public class XmlManager {
 			marshallerPool.release(marshaller);
 		}
 		if (LOG.isDebugEnabled()) {
-			LOG.debug("MARSHAL: " + (System.currentTimeMillis() - start) + " ms");
+			LOG.debug("Marshalled in: " + (System.currentTimeMillis() - start) + " ms");
 		}
 	}
 
@@ -78,7 +79,7 @@ public class XmlManager {
 		} finally {
 			unmarshallerPool.release(unmarshaller);
 			if (LOG.isDebugEnabled()) {
-				LOG.debug("UNMARSHAL: " + (System.currentTimeMillis() - start) + " ms");
+				LOG.debug("Unmarshalled in : " + (System.currentTimeMillis() - start) + " ms");
 			}
 		}
 	}
