@@ -43,7 +43,7 @@ public class Executor {
 
 		// Add watcher and start listening for changes in the target folders
 		loadWatchersFromConfigurationFile();
-		
+
 		// Run the raw entity consumer
 		runEntityProcessorThread();
 
@@ -52,6 +52,9 @@ public class Executor {
 		}
 	}
 
+	/**
+	 * Runs the Entity Processor Logic.
+	 */
 	private static void runEntityProcessorThread() {
 		Thread rawEntityConsumerThread = new Thread(new RawEntityConsumer());
 		rawEntityConsumerThread.start();
