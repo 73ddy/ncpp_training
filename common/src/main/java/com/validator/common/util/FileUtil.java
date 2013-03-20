@@ -2,7 +2,7 @@ package com.validator.common.util;
 
 import java.io.File;
 
-public class FileUtil {
+public final class FileUtil {
 
 	// Private constructor to discourage stop misuse
 	private FileUtil() {

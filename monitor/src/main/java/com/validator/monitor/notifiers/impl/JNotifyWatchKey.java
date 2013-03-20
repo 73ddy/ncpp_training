@@ -11,8 +11,9 @@ public class JNotifyWatchKey extends WatchKey {
 
 	private Integer watchKey;
 
-	JNotifyWatchKey(Integer assignedWatchKey) {
+	JNotifyWatchKey(Integer assignedWatchKey, String folderPath) {
 		this.watchKey = assignedWatchKey;
+		this.setFolderPath(folderPath);
 	}
 
 	@Override

@@ -15,6 +15,7 @@ import com.validator.common.operators.unary.logical.UnaryLogicalNotOperator;
 import com.validator.common.validators.entityvalidators.AtomicValidator;
 import com.validator.common.validators.entityvalidators.UnaryValidator;
 import com.validator.executor.threadexecutor.PoolExecutor;
+import com.validator.executor.validator.ValidatorStore;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.notifiers.Notifier;
@@ -44,7 +45,7 @@ public class ExecutorValidatorModule implements Module {
 		binder.bind(JNotifier.class).asEagerSingleton();
 		binder.bind(XmlManager.class).asEagerSingleton();*/
 		binder.bind(PoolExecutor.class).asEagerSingleton();
-		
+		binder.bind(ValidatorStore.class).asEagerSingleton();
 
 		// Interface Implementations
 		/*binder.bind(Notifier.class).to(JNotifier.class);

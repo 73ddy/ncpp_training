@@ -13,6 +13,7 @@ import com.validator.common.util.StringUtil;
 import com.validator.common.util.ValidatorProperties;
 import com.validator.executor.binding.GuiceInjector;
 import com.validator.executor.processors.Processor;
+import com.validator.executor.validator.ValidatorStore;
 import com.validator.monitor.entities.Employee;
 import com.validator.monitor.xml.XmlManager;
 
@@ -27,7 +28,8 @@ public class EmployeeProcessor extends Processor {
 
 	private XmlManager xmlManager;
 	private ValidatorProperties validatorProperties;
-
+	private ValidatorStore validatorStore;
+	
 	// Unused? Will never be used.
 	@SuppressWarnings("unused")
 	private EmployeeProcessor() {
@@ -35,8 +37,9 @@ public class EmployeeProcessor extends Processor {
 
 	public EmployeeProcessor(File file) {
 		xmlManager = GuiceInjector.getInjector().getInstance(XmlManager.class);
+		validatorStore = GuiceInjector.getInjector().getInstance(ValidatorStore.class);
 		validatorProperties = ValidatorProperties.getInstance();
-
+		
 		this.file = file;
 		try {
 			this.entity = (Employee) xmlManager.unmarshal(new FileInputStream(file));
@@ -48,12 +51,16 @@ public class EmployeeProcessor extends Processor {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void processEntity() {
 		LOG.info(StringUtil.concatenateStrings("About to process the entity - ", this.entity.toString()));
-		// TODO: valdiate
-		postEntityFileProcessing();
-		LOG.info(StringUtil.concatenateStrings("Successfully processed the entity - ", this.entity.toString()));
+		if (validatorStore.getValidator().validate(this.entity)) {
+			postEntityFileProcessing();
+			LOG.info(StringUtil.concatenateStrings("Successfully processed the entity - ", this.entity.toString()));
+		} else {
+			markEntityInvalid();
+		}
 	}
 
 	/**

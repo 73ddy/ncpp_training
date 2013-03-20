@@ -29,7 +29,7 @@ public class JNotifier implements Notifier {
 	@Override
 	public Watcher addWatcher(String folderPath, int mask, boolean watchSubtree) throws IOException {
 		int watcherId = JNotify.addWatch(folderPath, mask, watchSubtree, jNotifyListener);
-		WatchKey watchKey = new JNotifyWatchKey(watcherId);
+		WatchKey watchKey = new JNotifyWatchKey(watcherId, folderPath);
 		Watcher watcher = new Watcher(watchKey, folderPath, mask, watchSubtree, jNotifyListener);
 		watcher.setWatchKey(watchKey);
 		LOG.info(StringUtil.concatenateStrings("A watcher was succeddfully registered. ", watcher.toString()));

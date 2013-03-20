@@ -14,6 +14,7 @@ import com.validator.common.util.ValidatorProperties;
 import com.validator.common.validators.entityvalidators.Validator;
 import com.validator.executor.binding.GuiceInjector;
 import com.validator.executor.threadexecutor.RawEntityConsumer;
+import com.validator.executor.validator.ValidatorStore;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.watchers.Watchers;
 import com.validator.monitor.xml.XmlManager;
@@ -32,6 +33,7 @@ public class Executor {
 	private static Validator validator;
 	private static FileOperationMask fileOperationMask;
 	private static Watchers watchers;
+	private static ValidatorStore validatorStore;
 	private static ValidatorProperties validatorProperties = ValidatorProperties.getInstance();
 
 	public static void main(String[] args) throws PropertyNotFoundException, IOException, InterruptedException {
@@ -88,6 +90,7 @@ public class Executor {
 	private static void initializeValidator() throws FileNotFoundException {
 		String validatorFilePath = validatorProperties.getProperty(PropertyKeys.VALIDATOR_FILE.toString());
 		validator = (Validator) xmlManager.unmarshal(new BufferedInputStream(new FileInputStream(validatorFilePath)));
+		validatorStore.setValidator(validator);
 		LOG.info("Validator successfully extracted from validator file.");
 		System.out.println(validator);
 	}
@@ -98,5 +101,6 @@ public class Executor {
 	private static void injectBeans() {
 		xmlManager = injector.getInstance(XmlManager.class);
 		fileOperationMask = injector.getInstance(FileOperationMask.class);
+		validatorStore = injector.getInstance(ValidatorStore.class);
 	}
 }

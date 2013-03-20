@@ -5,7 +5,7 @@ package com.validator.common.util;
  * 
  * @author gaurav1935
  */
-public class StringUtil {
+public final class StringUtil {
 
 	// Private constructor to discourage stop misuse
 	private StringUtil() {
