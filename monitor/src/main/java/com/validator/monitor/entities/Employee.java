@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.validator.common.util.StringUtil;
+
 /**
  * Employee entity. One of the entities that are to be validated.
  * 
@@ -14,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
-public class Employee extends ValidableEntities {
+public class Employee extends ValidableEntity {
 	@XmlElement(name = "id", required = true)
 	private Integer id;
 	@XmlElement(name = "name", required = true)
@@ -44,5 +46,15 @@ public class Employee extends ValidableEntities {
 
 	public void setDateOfJoining(Date dateOfJoining) {
 		this.dateOfJoining = dateOfJoining;
+	}
+
+	@Override
+	public String toString() {
+		return StringUtil.concatenateStrings("Employee: id - ", id.toString(), ", name - ", name);
+	}
+
+	@Override
+	public String getEntityFileName() {
+		return StringUtil.concatenateStrings(this.name, "_", this.id.toString());
 	}
 }

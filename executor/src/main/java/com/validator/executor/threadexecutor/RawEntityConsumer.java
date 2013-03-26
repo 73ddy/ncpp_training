@@ -37,7 +37,7 @@ public class RawEntityConsumer implements Runnable {
 			if (null != (rawFiles = rawEntityStore.getRawFiles())) {
 				for (File file : rawFiles) {
 					processor = new EmployeeProcessor(file);
-					if (null != processor.getEntity()) {
+					if (null != processor.getEntityList()) {
 						PoolExecutor.addProcessor(processor);
 					}
 				}

@@ -15,6 +15,7 @@ import com.validator.common.operators.unary.logical.UnaryLogicalNotOperator;
 import com.validator.common.validators.entityvalidators.AtomicValidator;
 import com.validator.common.validators.entityvalidators.UnaryValidator;
 import com.validator.monitor.entities.Employee;
+import com.validator.monitor.entities.ValidableEntitiesList;
 import com.validator.monitor.notifiers.FileOperationMask;
 import com.validator.monitor.notifiers.Notifier;
 import com.validator.monitor.notifiers.impl.JNotifier;
@@ -34,7 +35,7 @@ public class MonitorValidatorModule implements Module {
 	@SuppressWarnings("rawtypes")
 	Class[] clazzezToBeBound = { BinaryEqualsOperator.class, BinaryGreaterThanOperator.class,
 			BinaryLogicalAndOperator.class, BinaryLogicalOrOperator.class, UnaryLogicalNotOperator.class,
-			AtomicValidator.class, UnaryValidator.class, Employee.class };
+			AtomicValidator.class, UnaryValidator.class, Employee.class, ValidableEntitiesList.class };
 
 	public void configure(Binder binder) {
 		// Singleton Implementations

@@ -1,6 +1,8 @@
 package com.validator.common.util;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public final class FileUtil {
 
@@ -71,5 +73,36 @@ public final class FileUtil {
 			throw new IllegalArgumentException();
 		}
 		return CommonUtil.getFileExtension(fileName);
+	}
+
+	/**
+	 * Creates a new file and writes content to it. However, if the file with
+	 * the same name exists
+	 * 
+	 * @param String
+	 *            fileName - the name of the file name.
+	 * @param String
+	 *            filePath - path where the file is saved on the file system.
+	 * @param String
+	 *            content - content of the file that has to be written.
+	 * @return
+	 * @throws IOException
+	 */
+	public static File createFile(String fileName, String filePath, String content) throws IOException {
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter(filePath.substring(0, filePath.lastIndexOf(CommonUtil.getFileSeparator()))
+					+ CommonUtil.getFileSeparator() + fileName);
+			writer.write(content);
+		} finally {
+			try {
+				if (null != writer) {
+					writer.close();
+				}
+			} catch (IOException e) {
+				// eating the exception
+			}
+		}
+		return null;
 	}
 }
